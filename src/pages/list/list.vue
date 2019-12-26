@@ -1,6 +1,6 @@
 <template>
   <div>
-    <div>list</div>
+    
   </div>
 </template>
 
@@ -20,12 +20,13 @@ export default {
     console.log("来到list页面", this.listData);
   },
   watch: {
-      $router: function(){
-          window.scrollTo(0, 0);
-      }
+    $router: function() {
+      window.scrollTo(0, 0);
+    }
   }
 };
 </script>
 
 <style scoped>
+
 </style>

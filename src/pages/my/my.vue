@@ -1,18 +1,21 @@
 <template>
   <div class="hello">
-    <button @click="goList">list</button>
+    <div>我的</div>
+
+    <tabBar :selected="selected"></tabBar>
   </div>
 </template>
 
 <script>
-import { axiosGet } from "../../utils/request";
+import tabBar from "../../components/tabBar/tabBar";
+import { axiosGet } from "../../../utils/request";
 import { createNamespacedHelpers } from "vuex";
 const { mapActions: listActions } = createNamespacedHelpers("dictlist");
 export default {
   name: "HelloWorld",
   data() {
     return {
-      msg: "Welcome to Your Vue.js App"
+      selected: "my"
     };
   },
   created() {
@@ -28,10 +31,27 @@ export default {
     goList() {
       this.$router.push("/list");
     }
+  },
+  components: {
+    tabBar
   }
 };
 </script>
 
-<!-- Add "scoped" attribute to limit CSS to this component only -->
 <style scoped>
+.el-carousel__item h3 {
+  color: #475669;
+  font-size: 14px;
+  opacity: 0.75;
+  line-height: 150px;
+  margin: 0;
+}
+
+.el-carousel__item:nth-child(2n) {
+  background-color: #99a9bf;
+}
+
+.el-carousel__item:nth-child(2n + 1) {
+  background-color: #d3dce6;
+}
 </style>
