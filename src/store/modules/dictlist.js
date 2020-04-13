@@ -1,20 +1,22 @@
 import { TYPES } from '../mutation-types';
 
 const state = {
-    listData:[],
+    listData: [],
+    isShow: '1',
+    num: '2'
 };
 
 const getters = {};
 
-const actions = {
-    saveData({commit}, data){
-        commit(TYPES.LIST_DATA, data)
+const mutations = {
+    [TYPES.LIST_DATA](state, data) {
+        state.listData = data;
     }
 };
 
-const mutations = {
-    [TYPES.LIST_DATA](state, data){
-        state.listData = data;
+const actions = {
+    saveData({ commit }, data) {
+        commit(TYPES.LIST_DATA, data)
     }
 };
 

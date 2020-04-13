@@ -23,7 +23,7 @@ export function axiosGet(url, params = {}, headers = {}) {
 export function axiosPost(url, params = {}, ) {
     return new Promise((resolve, reject) => {
         Loading.service({ text: '努力加载中。。。' })
-        axios.post(url, params).then(res => {
+        axios.post(process.env.API_HOST + url, params).then(res => {
             Loading.service().close();
             if (res.data.code == 0) {
                 resolve(res.data.data)

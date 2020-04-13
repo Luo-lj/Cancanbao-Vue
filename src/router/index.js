@@ -1,10 +1,9 @@
 import Vue from 'vue'
 import Router from 'vue-router'
-const index = () => import('../pages/index/index');
-const fenlei = () => import('../pages/fenlei/fenlei');
-const look = () => import('../pages/look/look');
-const my = () => import('../pages/my/my');
-const list = () => import('../pages/list/list');
+const index = () => import('../pages/tabBar/index/index');
+const fenlei = () => import('../pages/tabBar/fenlei/fenlei');
+const look = () => import('../pages/tabBar/look/look');
+const my = () => import('../pages/tabBar/my/my');
 
 Vue.use(Router)
 
@@ -26,10 +25,6 @@ export default new Router({
       path: '/my',
       name: 'my',
       component: my
-    },{
-      path: '/list',
-      name: 'list',
-      component: list
     }
   ]
 })

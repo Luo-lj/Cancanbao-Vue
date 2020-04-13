@@ -1,27 +1,29 @@
 <template>
   <div class="hello">
-    <div class="block">
-      <el-carousel height="150px">
-        <el-carousel-item v-for="item in 4" :key="item">
-          <h3 class="small">{{ item }}</h3>
-        </el-carousel-item>
-      </el-carousel>
-    </div>
+    <div>我的</div>
+
+    <cell @click="login" :label="label"></cell>
+
+    <cell @click="logout">退出登录</cell>
+
+    <cell>我的收藏</cell>
 
     <tabBar :selected="selected"></tabBar>
   </div>
 </template>
 
 <script>
-import tabBar from "../../components/tabBar/tabBar";
-import { axiosGet } from "../../../utils/request";
+import tabBar from "../../../components/tabBar/tabBar";
+import cell from "../../../components/cell/cell"
+import { axiosGet } from "../../../../utils/request";
 import { createNamespacedHelpers } from "vuex";
 const { mapActions: listActions } = createNamespacedHelpers("dictlist");
 export default {
   name: "HelloWorld",
   data() {
     return {
-      selected: ""
+      selected: "my",
+      label: "登录"
     };
   },
   created() {
@@ -36,10 +38,21 @@ export default {
 
     goList() {
       this.$router.push("/list");
-    }
+    },
+
+    //登录
+    login(){
+      console.log("登录")
+    },
+
+    //退出登录
+    logout(){
+      console.log("退出登录")
+    },
   },
   components: {
-    tabBar
+    tabBar,
+    cell
   }
 };
 </script>

@@ -1,21 +1,23 @@
 <template>
   <div class="hello">
-    <div>我的</div>
+    <div class="block">
+      看图
+    </div>
 
     <tabBar :selected="selected"></tabBar>
   </div>
 </template>
 
 <script>
-import tabBar from "../../components/tabBar/tabBar";
-import { axiosGet } from "../../../utils/request";
+import tabBar from "../../../components/tabBar/tabBar";
+import { axiosGet } from "../../../../utils/request";
 import { createNamespacedHelpers } from "vuex";
 const { mapActions: listActions } = createNamespacedHelpers("dictlist");
 export default {
   name: "HelloWorld",
   data() {
     return {
-      selected: "my"
+      selected: "look"
     };
   },
   created() {
